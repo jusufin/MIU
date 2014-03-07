@@ -1,0 +1,17 @@
+
+
+
+var Quote = ["Hold me", "one" , "two", "three", "four", "five"];
+
+
+var PickQuote = function () 
+{
+	
+  
+}
+
+
+
+
+BackT.addEventListener("click", );
+ForwardT.addEventListener("click", );

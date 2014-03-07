@@ -1,0 +1,36 @@
+
+
+
+var Quote = ["Hold me", "one" , "two", "three", "four", "five"];
+var Check = 0;
+
+var PickQuote = function () 
+{
+	if(Check == 1){
+		
+		
+		var QuoteLabel = Ti.UI.createLabel({
+ 		
+ 		top: 20,
+ 		left: 20,
+ 		right: 20,
+ 		text: "Quote",
+ 		color: "#FFF87C",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
+		});
+		MainView.add(QuoteLabel);
+	}
+	
+	if(Check == 2){
+		
+		
+	}
+	
+};
+
+
+
+
+BackT.addEventListener("click", PickQuote, Check = 1);
+ForwardT.addEventListener("click", PickQuote, Check = 2);

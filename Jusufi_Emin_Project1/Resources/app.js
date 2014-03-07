@@ -1,64 +1,93 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
-
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+//Emin Jusufi
+//03/7/2014
 
 
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
-});
+var Margin = 15;
 
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+var MainWindow = Ti.UI.createWindow({
+	
+	backgroundColor:"#FFF87C"
+
+}); //creates window and sets backround color
+
+var MainView = Ti.UI.createView({
+		backgroundColor: "#FF637F",
+		borderColor: "#B2334A",
+		borderRadius: 5,
+		borderWidth: 2,
+		width: 300,
+		height: 450,
+		top: 30
 });
 
-win1.add(label1);
 
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
+var QuoteLabel = Ti.UI.createLabel({
+ 		
+ 		top: 20,
+ 		left: 20,
+ 		right: 20,
+ 		text: "Quote",
+ 		color: "#FFF87C",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
 });
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+
+
+var ForwardT = Ti.UI.createLabel({
+ 		
+ 		top: 10,
+ 		text: "Forward",
+ 		color: "#FFF87C",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
 });
 
-win2.add(label2);
+
+var BackT = Ti.UI.createLabel({
+ 		
+ 		top: 10,
+ 		text: "Back",
+ 		color: "#FFF87C",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
+});
+
+
+var ButtonForward = Ti.UI.createView({
+		backgroundColor: "#3BA2CC",
+		borderColor: "#3C90B2",
+		borderRadius: 5,
+		borderWidth: 2,
+		width: 130,
+		height: 60,
+		top: MainView.top + MainView.height + Margin, //changed for testing
+		right: 10
+		
+});
+
+var ButtonBack = Ti.UI.createView({
+		backgroundColor: "#3BA2CC",
+		borderColor: "#3C90B2",
+		borderRadius: 5,
+		borderWidth: 2,
+		width: 130,
+		height: 60,
+		top: MainView.top + MainView.height + Margin, //changed for testing
+		left: 10
+		
+});
 
 
 
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
 
 
-// open tab group
-tabGroup.open();
+
+var LoadF = require("ChangeQuote");
+
+MainWindow.add( MainView, ButtonForward, ButtonBack);
+MainView.add(QuoteLabel);
+ButtonForward.add(ForwardT);
+ButtonBack.add(BackT);
+MainWindow.open();
+
