@@ -19,32 +19,17 @@ var MainView = Ti.UI.createView({
 });
 
 var ButtonForward = Ti.UI.createButton({
-		backgroundColor: "#3BA2CC",
-		borderColor: "#3C90B2",
+		backgroundColor: "#FF637F",
+		borderColor: "#B2334A",
 		borderRadius: 5,
 		borderWidth: 2,
 		width: 100,
 		height: 60,
-		bottom: 15,
-		right: 10,
-		
-
-});
-
-var ButtonBack = Ti.UI.createButton({
-		backgroundColor: "#3BA2CC",
-		borderColor: "#3C90B2",
-		borderRadius: 5,
-		borderWidth: 2,
-		width: 100,
-		height: 60,
-		bottom: 15,
-		left: 10,
-		
+		bottom: 20,
+		left: 20
 
 });
 
 
-
-MainWindow.add(MainView,ButtonForward,ButtonBack);
+MainWindow.add(MainView,ButtonForward);
 MainWindow.open();

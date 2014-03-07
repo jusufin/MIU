@@ -1,0 +1,14 @@
+
+//Ti.UI.setBackgroundColor("#FFB800"); //set backround color
+
+
+var MainWindow = Ti.UI.createWindow
+({
+	
+	backroundColor:"#FFB800",
+	title: "First"
+
+}); //creates window
+
+
+MainWindow.open();

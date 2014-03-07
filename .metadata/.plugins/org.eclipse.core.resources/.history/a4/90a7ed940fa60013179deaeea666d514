@@ -1,0 +1,8 @@
+
+Ti.UI.setBackgroundColor("#000"); //set backround color
+
+
+var MainWindow = Ti.UI.createWindow({
+	backroundColor:"#fff" } ); //creates window
+
+
