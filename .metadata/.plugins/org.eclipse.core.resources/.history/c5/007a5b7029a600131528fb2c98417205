@@ -1,0 +1,42 @@
+
+
+
+var Quote = ["zero", "one" , "two", "three", "four", "five"];
+var LenghtA = 0;
+var Check = 0;
+
+var FQuote = function () 
+{
+		
+		LenghtA = Quote.length; 
+		
+		if(Check == LenghtA || Quote[Check] == null)
+		{
+			Check = 0;
+		}
+		
+		QuoteLabel.text = Quote[Check];
+		
+		Check = Check + 1;
+		
+	
+};
+
+var BQuote = function () 
+{
+		if(Check == 0 || Quote[Check] == null)
+		{
+			Check = LenghtA;
+		}
+		
+		QuoteLabel.text = Quote[Check];
+		
+		Check = Check + 1;
+		
+	
+};
+
+
+
+ButtonBack.addEventListener("click", BQuote);
+ButtonForward.addEventListener("click", FQuote);

@@ -1,0 +1,24 @@
+
+
+
+var Quote = ["zero", "one" , "two", "three", "four", "five"];
+var Check = 0;
+
+var PickQuote = function () 
+{
+		
+		QuoteLabel.text = Quote[Check];
+		
+		Check = Check + 1;
+		if(Check == 9 || Quote == "")
+		{
+			Check = 0;
+		}
+	
+};
+
+
+
+
+ButtonBack.addEventListener("click", PickQuote);
+ButtonForward.addEventListener("click", PickQuote);

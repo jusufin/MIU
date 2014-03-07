@@ -1,0 +1,47 @@
+
+
+
+var Quote = ["zero", "one" , "two", "three", "four", "five"];
+var LengthA = Quote.length;
+var Check = 0;
+var Trigger = false;
+
+var FQuote = function () 
+{
+		
+		
+		QuoteLabel.text = Quote[Check];
+		Check = Check + 1;	
+		
+
+		if(Check == LengthA)
+		{
+			
+			Check = 0;
+		
+		}
+		
+		
+};
+
+var BQuote = function () 
+{
+		
+		if(Check == 0)
+		{
+			Check = LengthA - 1;
+			Trigger = true;
+		}
+		
+		
+		QuoteLabel.text = Quote[Check];		
+		Check = Check - 1;		
+		
+		
+		
+};
+
+
+
+ButtonBack.addEventListener("click", BQuote);
+ButtonForward.addEventListener("click", FQuote);
