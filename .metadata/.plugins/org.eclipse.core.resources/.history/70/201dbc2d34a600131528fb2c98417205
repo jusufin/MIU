@@ -2,14 +2,14 @@
 
 
 var Quote = ["zero", "one" , "two", "three", "four", "five"];
-var LengthA = Quote.length;
+var LengthA = Quote.length + 1;
 var Check = 0;
 var BTrigger = false;
 var FTrigger = false;
 
 var FQuote = function () 
 {
-		BTrigger = true; //checks if other button 
+		BTrigger = true;
 		
 		if(FTrigger == true)
 		{
@@ -17,6 +17,8 @@ var FQuote = function ()
 			FTrigger = false;
 		}
 		
+		QuoteLabel.text = Quote[Check];
+		Check = Check + 1;	
 		
 
 		if(Check == LengthA)
@@ -24,8 +26,6 @@ var FQuote = function ()
 			Check = 0;		
 		}
 		
-		QuoteLabel.text = Quote[Check];
-		Check = Check + 1;	
 		
 };
 
@@ -35,9 +35,14 @@ var BQuote = function ()
 		
 		if(BTrigger == true)
 		{	
-			
-			Check = Check - 2;
-			
+			if(Check == LengthA - 1)
+			{
+				Check = Check - 3;
+			}
+			else
+			{
+				Check = Check - 2;
+			}
 			BTrigger = false;
 		}
 		

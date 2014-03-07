@@ -17,6 +17,8 @@ var FQuote = function ()
 			FTrigger = false;
 		}
 		
+		QuoteLabel.text = Quote[Check];
+		Check = Check + 1;	
 		
 
 		if(Check == LengthA)
@@ -24,8 +26,6 @@ var FQuote = function ()
 			Check = 0;		
 		}
 		
-		QuoteLabel.text = Quote[Check];
-		Check = Check + 1;	
 		
 };
 
