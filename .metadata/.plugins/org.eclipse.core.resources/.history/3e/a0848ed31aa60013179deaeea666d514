@@ -21,10 +21,8 @@ var MainView = Ti.UI.createView({
 
 var QuoteLabel = Ti.UI.createLabel({
  		
- 		top: 2,
- 		height: 400,
- 		
- 		text: "  heloo o o o o o o o o o o o o o o ",
+ 		top: 1,
+ 		text: "  heloo o o o o o o o o o o o o o o o o o o",
  		color: "#FFF87C",
  		font: {fontSize: 30, fontFamily: "Futura" },
  		zIndex: 1

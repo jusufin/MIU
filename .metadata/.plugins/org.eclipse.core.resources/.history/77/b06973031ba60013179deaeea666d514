@@ -23,7 +23,7 @@ var QuoteLabel = Ti.UI.createLabel({
  		
  		top: 2,
  		height: 400,
- 		
+ 		width:  200,
  		text: "  heloo o o o o o o o o o o o o o o ",
  		color: "#FFF87C",
  		font: {fontSize: 30, fontFamily: "Futura" },

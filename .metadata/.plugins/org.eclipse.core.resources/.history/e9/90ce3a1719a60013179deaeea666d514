@@ -21,12 +21,10 @@ var MainView = Ti.UI.createView({
 
 var QuoteLabel = Ti.UI.createLabel({
  		
- 		top: 2,
- 		height: 400,
- 		
- 		text: "  heloo o o o o o o o o o o o o o o ",
+ 		top: MainView.top + Margin,
+ 		text: "hello world",
  		color: "#FFF87C",
- 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		font: {fontSize: 50, fontFamily: "Futura" },
  		zIndex: 1
 	
 });
@@ -59,6 +57,5 @@ var ButtonBack = Ti.UI.createButton({
 
 
 
-MainWindow.add( MainView, ButtonForward, ButtonBack);
-MainView.add(QuoteLabel);
+MainWindow.add( MainView, QuoteLabel, ButtonForward, ButtonBack);
 MainWindow.open();
