@@ -1,6 +1,6 @@
 
 
-// QUOTE ARRAY
+
 var Quote = [
 "Your mind needs exercise just as much as your body does, that's why I think of jogging every day.", 
 "Chuck Norris has a bear carpet in his house, the bear isn't dead its just afraid to move." , 
@@ -12,17 +12,17 @@ var Quote = [
 ];
 
 
-var LengthA = Quote.length; //SETS ARRAY LENGTH TO LENGTHA 
-var Check = 0; 
+var LengthA = Quote.length;
+var Check = 0;
 var BTrigger = false;
 var FTrigger = false;
 
 var FQuote = function () 
 {
 	
-		BTrigger = true; //CHECKS IF OTHER BUTTON HAS BEEN PRESSED BEFORE
+		BTrigger = true; //checks if other button 
 		
-		if(FTrigger == true)//IF IT HAS THEN THIS IS THE FIRST TIME IN THIS DIRECTION SO STEP BY 2
+		if(FTrigger == true)
 		{
 			Check = Check + 2;
 			FTrigger = false;
@@ -34,7 +34,7 @@ var FQuote = function ()
 		}
 		
 		QuoteLabel.text = Quote[Check];
-		Check = Check + 1;	//ADDS ONE TO CHECK TO STEP FORWARD
+		Check = Check + 1;	
 		
 };
 
