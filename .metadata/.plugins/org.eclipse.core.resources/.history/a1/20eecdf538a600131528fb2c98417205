@@ -7,9 +7,7 @@ var Quote = [
 "The secret to happiness is not to do what makes you happy, it's to be happy doing what you're already doing.", 
 "I'm old enough to know better, but young enough to do it anyway.", 
 "Why do gorillas have big nostrils? Because they have thick fingers.", 
-"Life is a pretty cheezy game, but at least it has good graphics.",
-"When I was in high school I had two favorite subjects, lunch and recess."
-];
+"Life is a pretty cheezy game, but at least it has good graphics."];
 
 
 var LengthA = Quote.length;
