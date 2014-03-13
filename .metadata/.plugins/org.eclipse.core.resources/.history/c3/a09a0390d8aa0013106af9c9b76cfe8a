@@ -1,0 +1,63 @@
+
+
+
+var MainWindow = Ti.UI.createWindow
+({	
+}); //creates window
+
+
+var TitleView = Ti.UI.createView
+({
+		backgroundColor: "#323659",
+		height: 65,
+		top: 0
+});
+
+var TitelLabel = Ti.UI.createLabel
+({ 		
+ 		top: 30,
+ 		width: "100%",
+ 		text: "Dresden Files Bios",
+ 		color: "#CCC2B3",
+ 		font: {fontSize: 26, fontFamily: "Futura" },
+ 		textAlign: "center"
+});
+
+var border = Ti.UI.createView
+({
+		backgroundColor: "#323659",
+		height: 1,
+		top: TitleView.height + TitleView.top
+});
+
+var Characters = Ti.UI.createTableView
+({
+	top: border.top + border.height,
+	backgroundColor: "#CCC2B3"
+});
+
+ var MainCharacters = Ti.UI.createTableViewSection
+ ({
+ 	headerTitle: "Characters",
+ 	footerTitle: "Good Guys"
+ });
+
+var MainVillians = Ti.UI.createTableViewSection
+ ({
+ 	headerTitle: "Characters",
+ 	footerTitle: "Bad Guys"
+ });
+
+if (Ti.Platform.name === "iPhone OS")
+ {
+ 	Characters.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+ };
+
+var CharactersSections = [MainCharacters,MainVillians];
+
+Characters.setData(CharactersSections);
+
+
+TitleView.add(TitelLabel);
+MainWindow.add(TitleView,border,Characters);
+MainWindow.open();

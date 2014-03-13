@@ -1,0 +1,20 @@
+
+
+
+var MainWindow = Ti.UI.createWindow
+({	
+	backgroundColor:"#818AE5"
+}); //creates window and sets backround color
+
+var TitleView = Ti.UI.createView
+({
+		backgroundColor: "#323659",
+		height: 65,
+		top: 0
+});
+
+
+
+
+MainWindow.add(TitleView);
+MainWindow.open();

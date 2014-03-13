@@ -1,0 +1,29 @@
+
+
+
+var MainWindow = Ti.UI.createWindow
+({	
+	backgroundColor:"#818AE5"
+}); //creates window and sets backround color
+
+var TitleView = Ti.UI.createView
+({
+		backgroundColor: "#323659",
+		height: 65,
+		top: 0
+});
+
+var TitelLabel = Ti.UI.createLabel
+({ 		
+ 		top: 30,
+ 		width: "100%",
+ 		text: "Dresden Files Bios",
+ 		color: "#FFF87C",
+ 		font: {fontSize: 26, fontFamily: "Futura" },
+ 		textAlign: "center"
+});
+
+
+TitleView.add(TitelLabel);
+MainWindow.add(TitleView);
+MainWindow.open();
