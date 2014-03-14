@@ -8,21 +8,35 @@
 //creates window
 var MainWindow = Ti.UI.createWindow
 ({	
-	title: "The Dresden Files"
 }); 
 
-var navWindow = Ti.UI.iOS.createNavigationWindow
-	({
-		window: MainWindow
-	});
 
+//creates topmost view
+var TitleView = Ti.UI.createView
+({
+		backgroundColor: "#323659",
+		height: 65,
+		top: 0
+});
+
+
+//Adds label to topmost view
+var TitelLabel = Ti.UI.createLabel
+({ 		
+ 		top: 30,
+ 		width: "100%",
+ 		text: "Dresden Files Bios",
+ 		color: "#CCC2B3",
+ 		font: {fontSize: 26, fontFamily: "Futura" },
+ 		textAlign: "center"
+});
 
 
 var border = Ti.UI.createView
 ({
 		backgroundColor: "#323659",
 		height: 1,
-		top: 0
+		top: TitleView.height + TitleView.top
 });
 
 var Characters = Ti.UI.createTableView
@@ -38,6 +52,6 @@ var Characters = Ti.UI.createTableView
 
 var LoadF = require("TableView");
 
-
-MainWindow.add(border,Characters);
-navWindow.open();
+TitleView.add(TitelLabel);
+MainWindow.add(TitleView,border,Characters);
+MainWindow.open();

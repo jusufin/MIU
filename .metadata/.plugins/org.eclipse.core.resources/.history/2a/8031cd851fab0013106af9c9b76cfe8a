@@ -18,18 +18,18 @@ var People =
 	{
 		"Bguys" : 
 		[ 
-		{"title":"Queen Mab", "Description": "Also known as the Queen of Air and Darkness, Mab is easily one the most powerful beings currently encountered in the books. The daughter of Mother Winter and the mother of Maeve, Mab has demonstrated her immense power both by performing great feats of magic with little or no effort and in her ways of punishing those who have dishonored her."},
-		{"title":"Johnny Marcone", "Description": "John Marcone is the most powerful crime boss in Chicago and an antagonist of Dresden's, though the two have worked together far more often than they have opposed each other. This has largely been due to some supernatural predator or villain causing collateral damage to Marcone's industry and him relying on Dresden to deal with the problem, but Harry has asked for Marcone's help at least twice. Marcone controls the majority of organized crime in Chicago and has developed considerable knowledge of the supernatural aspects of the city."}, 
-		{"title":"Aurora", "Description": "She was the Summer Lady, daughter of Titania. First appearing in Summer Knight, she takes Elaine after she is wounded by Lloyd Slate, the Winter Knight. She took care of Elaine, and sat to talk to Harry. He noted her kindness and her gentleness. However, at a later time in the book, it is discovered that she is the one who kidnapped Lily, encasing her in stone. She steals the Unraveling Harry obtained from Mother Winter, and started the War at the Table. "}, 
-		{"title":"Lasciel", "Description": "Also known as The Temptress, The Seducer and Webweaver, Lasciel is one of thirty fallen angels that comprise the Order of the Blackened Denarius, demon spirits that are contained within thirty silver coins, each bearing the particular sigil representing the entombed demon's name. "}, 
-		{"title":"Mavra", "Description": "She is one of the few surviving members of the Black Court and, therefore, one of the most powerful and fearsome creatures in the vampire community. In addition to her supernatural powers as a vampire, she is as skilled in the use of magic as a full-fledged wizard and has been a threat to Dresden a few times throughout the novels since her introduction in Grave Peril. "}, 
-		{"title":"Nicodemus", "Description": "Also known as Nicodemus Archleone, a reference to 1 Peter 5:8. Described by Harry as the most dangerous man he's ever met, Nicodemus is every bit the threat he appears: while most evil characters manage to appear in a somewhat gray area at times, Nicodemus is as bad as it gets. This could be attributed to the fact that the only characters who have described him in the books are all Catholic clergy. The oldest and most powerful of the Denarians, he is possessed by the fallen angel Anduriel, one of Lucifer's captains."}, 
-		{"title":"Bianca St. Claire", "Description": "Bianca, like all her kind, is actually a repulsive monster inside the flesh of a beautiful woman. Harry earned her wrath by coming armed into her house during the investigation of one of her prostitutes' deaths, which climaxed with him attacking her with a handkerchief filled with sunshine. "}
+		{"title":"Queen Mab", "Description": ""},
+		{"title":"Johnny Marcone", "Description": ""}, 
+		{"title":"Aurora", "Description": ""}, 
+		{"title":"Lasciel", "Description": ""}, 
+		{"title":"Mavra", "Description": ""}, 
+		{"title":"Nicodemus", "Description": ""}, 
+		{"title":"Bianca St. Claire", "Description": ""}
 		]
 }
 };
 
-var count  = Object.keys(People.GoodGuys.Gguys).length; 
+var count = Object.keys(People.GoodGuys.Gguys).length; 
 var countB = Object.keys(People.BadGuys.Bguys).length; 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,7 +103,6 @@ var getDetail = function()
 for(var i=0, s = count; i<s; i++)
 {
 	var name = People.GoodGuys.Gguys[i];
-	
 	var theRow = Ti.UI.createTableViewRow
 	({
 		
@@ -121,10 +120,9 @@ for(var i=0, s = count; i<s; i++)
 for(var i=0, s = countB; i<s; i++)
 {
 	var name = People.BadGuys.Bguys[i];
-	
 	var theRow2 = Ti.UI.createTableViewRow
 	({		
-		title: name.title,
+		title: name.tile,
 		desc: name.Description,
 		hasChild: true
 	});
