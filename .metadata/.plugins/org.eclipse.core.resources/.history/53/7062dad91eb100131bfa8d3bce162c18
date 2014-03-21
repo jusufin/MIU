@@ -10,7 +10,6 @@ var Margin = 10;
 var Images =
 [
 	"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg",
-	"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg",
 	"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg"
 ];
 var TrueCanvasWidth = "10%";
@@ -42,7 +41,7 @@ var CreateGalleryWin = function()
 	 		
 	 		textAlign:'center',
 	 		text: "Back",
-	 		color: "#26447C",
+	 		color: "#3762B0",
 	 		font: {fontSize: 30, fontFamily: "Futura" },
  			zIndex: 1
 	});
@@ -102,6 +101,8 @@ var CreateGalleryWin = function()
  		
  	});
  
+	
+ 	
  	Button2.addEventListener('click', function()
  	{
     	navWindow.closeWindow(mainWin2, {animated:true}); 
@@ -111,15 +112,10 @@ var CreateGalleryWin = function()
 	
 };
 
-//fills screen with image and adds name
+
 var CreateImageWin = function(ImData)
 {
 	
-	//remove stuff from string
-	var str = ImData;
-    str = str.replace("Stuff/", "");
-    
-    
 	var mainWin3 = Ti.UI.createWindow
 	({	
 		navBarHidden:true,
@@ -133,27 +129,6 @@ var CreateImageWin = function(ImData)
 		width:  "100%",
 		height: 50
 		
-	});
-	
-	//Label for Gallery Button
-	var BLabel = Ti.UI.createLabel
-	({
-	 		
-	 		textAlign:'center',
-	 		text: "Back",
-	 		color: "#26447C",
-	 		font: {fontSize: 30, fontFamily: "Futura" },
- 			zIndex: 1
-	});
-	
-	var ILabel = Ti.UI.createLabel
-	({
-	 		bottom: Button3.height + 5,
-	 		textAlign:'center',
-	 		text: str,
-	 		color: "#3762B0",
-	 		font: {fontSize: 30, fontFamily: "Futura" },
- 			zIndex: 1
 	});
 	
 	var viewContainer = Ti.UI.createView
@@ -170,10 +145,7 @@ var CreateImageWin = function(ImData)
 		image: ImData		
 	});
 	
-	viewContainer.add(ImageTS, ILabel);		
-	
-	Button3.add(BLabel);
-	
+	viewContainer.add(ImageTS);		
 	mainWin3.add(viewContainer, Button3);
 	
  	Button3.addEventListener('click', function()
