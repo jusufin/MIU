@@ -1,0 +1,70 @@
+//Emin Jusufi
+
+
+
+var dWidth = Ti.Platform.displayCaps.platformWidth;
+var dHeight = Ti.Platform.displayCaps.platformHeight;
+var Items = 15;
+var Rows = 3;
+var Margin = 10;
+var Images = ["M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg"];
+var TrueCanvasWidth = "10%";
+var size = (dWidth - (Margin * 5)) / 4  ;
+console.log(size);
+
+
+var getDetail = function()
+{
+	
+	var border = Ti.UI.createView
+	({
+			backgroundColor: "#cecece",
+			height: 1,
+			width: dWidth,
+			top: 20
+	});
+	
+	
+	var viewContainer = Ti.UI.createView
+	({
+		Width: dWidth,
+		backgroundColor: "#fef",
+		layout: "horizontal"
+	});
+
+
+
+	for(var i = 0; i < Images.length; i++)
+	{
+		var view = Ti.UI.createView({
+			backgroundColor: "#33CCFF",
+			top: Margin,
+			left: Margin,
+			width: size,
+			height: size
+		});
+		var Nimage = Ti.UI.createImageView({
+			image: "Stuff/" + Images[i]
+			});
+		
+		view.add(Nimage);
+		viewContainer.add(view);
+	};
+
+};
+
+mainWin.add(viewContainer);
+mainWin.add(border);
+
+
+
+
+
+
+
+
+
+
+
+
+

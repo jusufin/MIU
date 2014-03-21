@@ -1,0 +1,65 @@
+//Emin Jusufi
+//3/20/2014
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+var dWidth = Ti.Platform.displayCaps.platformWidth;
+var dHeight = Ti.Platform.displayCaps.platformHeight;
+var Items = 15;
+var Rows = 3;
+var Margin = 10;
+
+
+var TCWidth = "90%";
+var size = (dWidth + dHeight) / .10 ;
+
+
+//creates window
+var MainWindow = Ti.UI.createWindow
+({	
+	backgroundColor: "#fff"
+}); 
+
+var border = Ti.UI.createView
+({
+		backgroundColor: "#cecece",
+		height: 1,
+		width: dWidth,
+		top: 20
+});
+
+
+var ContainerV = Ti.UI.createView
+({
+	Width: dWidth,
+	backgroundColor: "#fef",
+	layout: "horizontal"
+});
+
+
+for(var i = 0; i < Items; i++)
+{
+	var view = Ti.UI.createView({
+		backroundColor: "#33CCFF",
+		top: Margin,
+		left: Margin,
+		width: size,
+		height: size
+	});
+	var text = Ti.UI.createLabel({text: i + 1, color: "#fff"});
+	
+	view.add(text);
+	ContainerV.add(view);
+};
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var LoadF = require("TableView");
+MainWindow.add(ContainerV);
+MainWindow.add(border);
+
+MainWindow.open();

@@ -1,0 +1,50 @@
+//Emin Jusufi
+//3/20/2014
+
+
+
+var mainWin = Ti.UI.createWindow
+({	
+	backgroundColor: "#fff",
+	layout: "horizontal"
+}); 
+
+var navWindow = Ti.UI.iOS.createNavigationWindow
+({
+	window: mainWin
+});
+
+
+
+var border = Ti.UI.createView
+({
+	backgroundColor: "#323659",
+	top: 30,
+	width: 50,
+	height: 100
+
+});
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var LoadF = require("GView");
+
+mainWin.add(border);
+navWindow.open();
+
+
+
+
+
+
+
+
+
+
+

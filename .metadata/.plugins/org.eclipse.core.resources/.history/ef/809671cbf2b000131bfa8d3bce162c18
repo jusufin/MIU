@@ -1,0 +1,75 @@
+//Emin Jusufi
+//3/20/2014
+
+
+
+var mainWin = Ti.UI.createWindow
+({	
+	titleControl: false,
+	backgroundColor: "#fff",
+	
+}); 
+
+
+var navWindow = Ti.UI.iOS.createNavigationWindow
+({
+	
+	window: mainWin
+});
+
+var Back = Ti.UI.createView
+({
+	
+	backgroundColor: "#CC9F3F",
+	width:"100%",
+	height: "100%"
+	
+});
+
+var Back2 = Ti.UI.createView
+({
+	
+	backgroundColor: "#3762B0",
+    top : ((Ti.Platform.displayCaps.platformHeight - 50) / 2),
+	width:"100%",
+	height: 50
+	
+});
+
+
+
+
+var Button = Ti.UI.createView
+({
+	
+	backgroundColor: "#26447C",
+	left : (Ti.Platform.displayCaps.platformWidth - 100) / 2,
+    top : ((Ti.Platform.displayCaps.platformHeight - 50) / 2) + 100,
+	width:  100,
+	height: 50
+	
+});
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var LoadF = require("GView");
+
+mainWin.add(Back,Button,Back2);
+navWindow.open();
+
+
+
+
+
+
+
+
+
+
+
