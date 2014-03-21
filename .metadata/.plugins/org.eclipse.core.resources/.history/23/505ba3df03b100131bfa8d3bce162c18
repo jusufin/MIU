@@ -7,12 +7,7 @@ var dHeight = Ti.Platform.displayCaps.platformHeight;
 var Items = 15;
 var Rows = 3;
 var Margin = 10;
-var Images =
-[
-"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg",
-"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg",
-"M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg"
-];
+var Images = ["M1.jpg","M2.jpg","M3.jpg","M4.jpg","M5.jpg","M6.jpg","M7.jpg","M8.jpg","M9.jpg","M10.jpg","M11.jpg"];
 var TrueCanvasWidth = "10%";
 var size = (dWidth - (Margin * 5)) / 4  ;
 
@@ -25,8 +20,7 @@ var CreateGalleryWin = function()
 		navBarHidden:true,
 		backgroundColor: "#3762B0",
 	}); 
-
-
+	
 	var Button2 = Ti.UI.createView
 	({
 		bottom: 0,
@@ -36,22 +30,17 @@ var CreateGalleryWin = function()
 		
 	});
 	
-	var ContainerM = Ti.UI.createScrollView
-	(
-		
-	);
 	var viewContainer = Ti.UI.createView
 	({
 		top: 20,
-		width: dWidth,
+		Width: dWidth,
 		backgroundColor: "#26447C",
 		layout: "horizontal"
 	});
 
-
 	for(var i = 0; i < Images.length; i++)
 	{
-		var view = Ti.UI.createView
+		var view = Ti.UI.createScrollableView
 		({
 			backgroundColor: "#33CCFF",
 			top: Margin,
@@ -72,9 +61,8 @@ var CreateGalleryWin = function()
 		viewContainer.add(view);
 	};
 		
-	ContainerM.add(viewContainer);	
-	
-	mainWin2.add(ContainerM, Button2);
+	mainWin2.add(viewContainer, Button2);
+ 	
  	
  	viewContainer.addEventListener('click', function(event)
  	{
@@ -85,6 +73,7 @@ var CreateGalleryWin = function()
  		}
  		
  	});
+ 	
  	
  	Button2.addEventListener('click', function()
  	{
