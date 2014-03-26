@@ -1,0 +1,78 @@
+//Emin Jusufi
+//3/26/2014
+
+
+
+var mainWin = Ti.UI.createWindow
+({	
+	title: "New",
+	backgroundColor: "#fff",
+	
+}); 
+
+
+var navWindow = Ti.UI.iOS.createNavigationWindow
+({
+	window: mainWin
+});
+
+var BackgroundView = Ti.UI.createView
+({
+	
+	backgroundColor: "#3762B0",
+	width:"100%",
+	height: "100%"
+	
+});
+
+var FirstButton = Ti.UI.createView
+({
+	
+	backgroundColor: "#26447C",
+    top: 0,
+	width:  "100%",
+	height: 80
+	
+});
+
+
+var SecondButton = Ti.UI.createView
+({
+	
+	backgroundColor: "#FFF77C",
+    top: FirstButton.height,
+	width:  "100%",
+	height: 80
+	
+});
+
+
+
+
+var FirstButtonLabel = Ti.UI.createLabel
+({
+ 		
+ 		textAlign:'center',
+ 		text: "Gallery",
+ 		color: "#3762B0",
+ 		font: {fontSize: 40, fontFamily: "Futura" },
+ 		zIndex: 1
+});
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+FirstButton.add(FirstButtonLabel);
+mainWin.add(BackgroundView,FirstButton,SecondButton);
+navWindow.open();
+

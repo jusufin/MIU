@@ -12,11 +12,9 @@ var MainWindow = Ti.UI.createWindow
 }); 
 
 var navWindow = Ti.UI.iOS.createNavigationWindow
-	({
-		window: MainWindow
-	});
-
-
+({
+	window: MainWindow
+});
 
 var border = Ti.UI.createView
 ({

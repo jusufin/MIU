@@ -1,0 +1,42 @@
+var CurrentWindow = Ti.UI.currentWindow;
+
+
+var ImageBorder = Ti.UI.createView
+({
+	
+	backgroundColor: "#26447C",
+    top: 0,
+	width:  "100%",
+	height: "50%"
+	
+});
+
+
+var GalleryImage = Ti.UI.createImageView
+({
+			
+});
+
+
+var FirstButton = Ti.UI.createView
+({
+	backgroundColor: "#26447C",
+    Bottom: 0,
+	width:  "100%",
+	height: 80	
+});
+
+var ButtonLabel = Ti.UI.createLabel
+({		
+	
+ 		textAlign:'center',
+ 		text: "Next Image",
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 40, fontFamily: "Futura" },
+ 		zIndex: 1
+ 		
+});
+
+FirstButton.add(ButtonLabel);
+
+CurrentWindow.add(ImageBorder,FirstButton);
