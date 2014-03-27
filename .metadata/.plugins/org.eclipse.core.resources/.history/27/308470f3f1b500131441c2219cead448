@@ -5,7 +5,7 @@ var slider = Titanium.UI.createSlider
 ({
     Bottom: 50,
     min: 0,
-    max: 500,
+    max: 100,
     width: '60%',
     value: 10
 });
@@ -14,7 +14,7 @@ var circle = Ti.UI.createImageView
 ({
             width: slider.value,
             height: slider.value,
-            borderRadius: slider.value/2,
+            borderRadius: 50,
             borderColor: '#1a0033',
             backgroundColor: '#B23352'
 });
@@ -23,7 +23,5 @@ var circle = Ti.UI.createImageView
 slider.addEventListener('change', function(e) 
 {
     circle.width =  String.format("%f", e.value);
-    circle.height =  String.format("%f", e.value);
-    circle.borderRadius =  String.format("%f", e.value/2);
 });
 CurrentWindow.add(circle,slider);
