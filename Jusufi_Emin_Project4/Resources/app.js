@@ -138,10 +138,12 @@ var FirstWinMove = function()
 var SecondWinMove = function()
 {
 	
+	
 	var GalleryWin2 = Ti.UI.createWindow
 	({
 		backgroundColor: "#474145",
-		url: "CreateBios.js"
+		url: "CreateBios.js",
+		WindowN: navWindow
 	});		
 	
 	navWindow.add(GalleryWin2);
@@ -165,6 +167,9 @@ var ThirdWinMove = function()
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 FirstButton.add(FirstButtonLabel);
