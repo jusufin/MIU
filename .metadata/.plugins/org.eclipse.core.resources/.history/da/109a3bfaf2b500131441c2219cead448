@@ -7,7 +7,7 @@
 var mainWin = Ti.UI.createWindow
 ({	
 	
-	title: "Main",
+	title: "New",
 	backgroundColor: "#fff"
 	
 }); 
@@ -126,7 +126,6 @@ var FirstWinMove = function()
 	
 	var GalleryWin = Ti.UI.createWindow
 	({
-		title: "Gallery",
 		backgroundColor: "#474145",
 		url: "CreateGallery.js"
 	});		
@@ -142,7 +141,6 @@ var SecondWinMove = function()
 	
 	var GalleryWin2 = Ti.UI.createWindow
 	({
-		title: "Bios",
 		backgroundColor: "#474145",
 		url: "CreateBios.js",
 		WindowN: navWindow
@@ -158,7 +156,6 @@ var ThirdWinMove = function()
 	
 	var GalleryWin3 = Ti.UI.createWindow
 	({
-		title: "Custom",
 		backgroundColor: "#474145",
 		url: "CreateCustom.js"
 	});		

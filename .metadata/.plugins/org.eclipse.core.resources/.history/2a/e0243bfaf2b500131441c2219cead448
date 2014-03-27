@@ -87,7 +87,6 @@ var getDetail = function(DataS)
 	
 	var DetailWin = Ti.UI.createWindow
 	({
-		title: "Details",
 		backgroundColor: "#474145"
 	});		
 	
