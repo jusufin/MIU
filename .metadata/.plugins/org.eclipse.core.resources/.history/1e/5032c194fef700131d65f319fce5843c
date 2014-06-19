@@ -1,0 +1,169 @@
+
+var CurrentWindow = Ti.UI.currentWindow;
+
+//set nav controller to NavN by passing It through the WindowN property of Win2
+var NavN = CurrentWindow.WindowN;
+
+var Animals = 
+{	
+	"Pets":
+	{
+		"CD" : 
+		[ 
+			{
+				"title":"Sibi", 
+			 	"Description": "Sibi is a very sweet girl! She has pretty blue eyes and is spayed with updated vaccinations. Sibi came here originally from a local animal control after being found as a stray and unclaimed. Sibi is friendly and well behaved and seems to like a lot of attention.",
+			  	"Image": "S.jpg",			
+		  	},
+		
+			{
+				"title":"Gem", 
+		 		"Description": "Gem is a spayed female that has a very pretty marked black and white coat. She was a stray from a local clinic that estimates her age to be 4 years. This kitty is extremely friendly and likes people of all ages. She would be more content with constant freedom. Gem is a precious cat that longs for a home and family. All her shots are current and she is litterbox trained. We do not know how she would react to other pets in a home. She is an independent cat that dislikes shelter life.",
+			  	"Image": "G.jpg",			  	
+			}, 
+		
+			{
+				"title":"Scarlet", 
+		 		"Description": "Scarlet is a beautiful short hair black. Her coat is silky and shiny and there is one small white spot on her chest. This spayed female is 8 years old. She was adopted as a kitten and recently lost her home due to her owner's allergies. Scarlet was not happy about this change in her lifestyle. She's a loving housecat that enjoys attention and petting and lots of lovin'. Scarlet has settled in, but hopefully her stay here will be brief! ",
+			  	"Image": "Sc.jpg",			  	
+			}, 
+		
+			{
+				"title":"Pookie", 
+				"Description": "Pookie was left at the door with her kittens. She is now spayed and vaccinated. This pretty short hair black female cat is just 2 years old now. Pookie is litterbox trained and oh so sweet. She loves people and all the attention she can solicit. She definitely does not like the other cats around her though. Pookie would prefer to be the only cat in the home! Pookie is so friendly and lovable that it is surprising she is still here. She is still playful and enjoys toys. Pookie is a fun little cat with tons of love and companionship to offer you.",
+			  	"Image": "P.jpg",			  	
+			}, 
+		
+			{
+				"title":"Betsy", 
+		 		"Description": "This sweet girl is now named Betsy. She came here from animal control after being abandoned. Her age is estimated to be 2 years and she weighs 21 pounds. Betsy looks like a Dachshund mix and has a short brindle coat with some white. She is super friendly and loves people",
+			  	"Image": "B.jpg",
+			}
+		],
+	},
+};
+
+var FileP = 1;
+var count  = Object.keys(Animals.Pets.CD).length; 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var MaPets = Ti.UI.createTableView
+({
+	top: 0,
+	backgroundColor: "#474145"
+});
+
+
+var AvPets = Ti.UI.createTableViewSection
+({
+ 	
+});
+
+var CS = [AvPets];
+
+if (Ti.Platform.name === "iPhone OS")
+ {
+ 	MaPets.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+ };
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//uses event propogation 
+var getDetail = function(DataS)
+{
+	
+	var DetailWin = Ti.UI.createWindow
+	({
+		title: "Details",
+		backgroundColor: "#474145"
+	});		
+	
+	var ImageC = Ti.UI.createImageView
+	({
+			image: 	"Bios/" + DataS.image,	
+			top: 0,
+			left:0,
+			width: "65%",
+			height: "50%"
+	});
+
+	var Dborder = Ti.UI.createView
+	({
+			backgroundColor: "#474145",
+			top: 0
+	});
+	
+	var DLabel = Ti.UI.createLabel
+	({
+			
+	 		bottom: 40,
+	 		
+	 		width: "100%",
+	 		
+	 		text: DataS.desc, //this references object that called the function
+	 		
+	 		color: "#FFFFFF",
+	 		
+	 		font: {fontSize: 20, fontFamily: "Futura" },
+	 		
+	 		textAlign: "center"
+	 		
+	});
+	
+
+	
+	Dborder.add(DLabel, ImageC);	
+	
+	DetailWin.add(Dborder);
+	
+    NavN.add(DetailWin);
+    
+    NavN.openWindow(DetailWin);
+    
+};
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+//populate rows with json data
+for(var i=0, s = count; i<s; i++)
+{
+	
+	var name = Animals.Pets.CD[i];
+	
+	var theRow = Ti.UI.createTableViewRow
+	({
+		color: "#FFFFFF",
+		font:{fontSize: 20, fontFamily: "Futura"},
+		title: name.title,
+		image: name.Image, 
+		desc: name.Description, 
+		hasChild: true
+	});
+	
+	AvPets.add(theRow);
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+MaPets.setData(CS);
+
+//Use Event Propogation to get Image and Description
+MaPets.addEventListener("click", function(event)
+{
+	getDetail(event.source);
+});
+
+CurrentWindow.add(MaPets);
+
+
+

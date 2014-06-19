@@ -1,0 +1,93 @@
+var CurrentWindow = Ti.UI.currentWindow;
+
+//set nav controller to NavN by passing It through the WindowN property of GallerWin2
+var NavN = CurrentWindow.WindowN;
+
+var Animals = 
+{	
+	"Pets":
+	{
+		"CD" : 
+		[ 
+			{
+				"title":"Harry Dresden", 
+			 	"Description": "Harry Blackstone Copperfield Dresden is a male human wizard, with a talent for thaumaturgy and alchemy working as a private investigator out of Chicago, USA. He is the protagonist and first person narrator of The Dresden Files series. As of Changes, he is 37 years old.",
+			  	"Image": "H.jpg",			
+		  	},
+		
+			{
+				"title":"Bob", 
+		 		"Description": "Bob is an air spirit of intellect who resides in a human skull owned by Harry. Before him, Bob was owned by Justin DuMorne, and before DuMorne, a powerful necromancer by the name of Heinrich Kemmler. Etienne the Enchanter originally picked Bob's skull up on the cheap, back in medieval France.",
+			  	"Image": "B.jpg",			  	
+			}, 
+		
+			{
+				"title":"Karrin Murphy", 
+		 		"Description": "Karrin Murphy is a human woman, and member of the Chicago Police Department at the Special Investigations division. Karrin makes an appearance in every book and is a prominent character in most of them.",
+			  	"Image": "K.jpg",			  	
+			}, 
+		
+			{
+				"title":"Thomas Raith", 
+				"Description": "Thomas Raith is introduced as a vampire of the White Court (an incubus) in Grave Peril. It is revealed in Blood Rites that Thomas is the half brother of Harry Dresden, the protagonist of the series, and, until Changes, Harry's only known living family.",
+			  	"Image": "T.jpg",			  	
+			}, 
+		
+			{
+				"title":"Molly Carpenter", 
+		 		"Description": "Margaret Katherine Amanda Carpenter, also called Molly, was a human wizard, now the Lady of the Winter Court of the Sidhe; she is the daughter of Michael and Charity Carpenter. Molly first appeared in Death Masks. She is first mentioned as Michael's eldest daughter in Grave Peril. ",
+			  	"Image": "M.jpg",
+			}
+		],
+	},
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Logo = Ti.UI.createImageView
+({
+	
+	top: 20,
+	height: 100,
+	width: 100,
+	image: 	"Stuff/DD.png" 
+	
+});
+
+var TopLabel = Ti.UI.createLabel
+({ 		
+		
+ 		textAlign:'center',
+ 		text: "County Animal Shelter",
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 20, fontFamily: "Futura" },
+ 		Top: 80,
+ 		zIndex: 1
+ 		
+});
+
+var Des = Ti.UI.createLabel
+({ 		
+		
+ 		textAlign:'center',
+ 		text: "Emo Jobs has been an avid animal lover since childhood. He was a volunteer with the ASPCA for five years helping to find animals who were victims of abuse a safe home. He later decided to open an animal shelter of his own to help find abandoned animals a caring home.",
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 20, fontFamily: "Futura" },
+ 		Top: 200,
+ 		zIndex: 1
+ 		
+});
+
+
+CurrentWindow.add(Logo,TopLabel,Des);
