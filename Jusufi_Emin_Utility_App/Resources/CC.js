@@ -263,8 +263,7 @@ ViewFour.add(LabelFour);
 BButton.addEventListener('click', function()
 {
 	
-    CurrentWindow.close();
-    	
+    alertWindow.show();
 });
 
 
@@ -290,6 +289,38 @@ BButton.addEventListener('click', function()
 
 
 
+var ImageC = Ti.UI.createImageView
+	({
+			image: 	"Stuff/CC.jpg",
+			height: "30%",
+			width: "50%",	
+			top: 10,
+	});
+
+
+var alertWindow = Titanium.UI.createAlertDialog({
+    title: 'Close',
+    message: 'Are you sure',
+    cancel:1,
+    buttonNames: ['OK','Cancel']
+});
+ 
+alertWindow.addEventListener('click',function(ev){
+    Titanium.API.info( "cancel " + ev.cancel );
+    Titanium.API.info( "index " + ev.index );
+    Titanium.API.info( "index " + ev.source );
+    switch(ev.index)
+    {
+    case 0:
+      Titanium.API.info( "OK button was hit");
+      CurrentWindow.close();    	
+      break;
+    case 1:
+      Titanium.API.info( "cancel button was hit");
+      break;
+    }
+});
+
 
 
 
@@ -298,5 +329,5 @@ CurrentWindow.add
 	TextOne, TextTwo, TextThree, TextFour,
 	FieldOne, FieldTwo, FieldThree, FieldFour,
 	LineL, CButton, BButton,
-	ViewOne , ViewTwo, ViewThree, ViewFour
+	ViewOne , ViewTwo, ViewThree, ViewFour, ImageC
 );

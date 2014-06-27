@@ -1,4 +1,3 @@
-
 var CurrentWindow = Ti.UI.currentWindow;
 
 //First Input/////////////////////////////////////////////////////////
@@ -9,20 +8,39 @@ var FieldOne = Ti.UI.createTextField
 ({
 		   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 		   color: '#336699',
-		   font:{fontSize:12,fontWeight:'bold'},
-		   hintText: 'Enter Yes/No',
-		   width: 100, 
+		   width: 150, 
 		   height: 30,
 		   top: "39%",
-		   left: 200
+		   left: 150
+});
+
+var ViewOne = Ti.UI.createView
+({
+	
+			backgroundColor: "#037DCC",
+			width:40,
+			height: 30,
+			top: "39%",
+			left: 115
+	
+});
+
+var LabelOne = Ti.UI.createLabel
+({ 		
+		
+	 		textAlign:'center',
+	 		text: "$",
+	 		color: "#FFFFFF",
+	 		font: {fontSize: 15, fontFamily: "Futura" },
+	 		zIndex: 1
+ 		
 });
 
 var TextOne = Ti.UI.createLabel
 ({ 		
 		
 	 		textAlign:'center',
-	 		text: "Have you ever applied for bankrupcy: ",
-	 		
+	 		text: "Loan Amount: ",
 	 		color: "#037DCC",
 	 		font: {fontSize: 15, fontFamily: "Futura" },
 	 		top: "40%",
@@ -42,19 +60,39 @@ var FieldTwo = Ti.UI.createTextField
 ({
 		   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 		   color: '#336699',
-		   width: 100, 
-		   font:{fontSize:12,fontWeight:'bold'},
-		   hintText: 'Enter Yes/No',
+		   width: 80, 
 		   height: 30,
 		   top: "49%",
-		   left: 200
+		   left: 115
+});
+
+var ViewTwo = Ti.UI.createView
+({
+	
+			backgroundColor: "#037DCC",
+			width:40,
+			height: 30,
+			top: "49%",
+			left: 190
+	
+});
+
+var LabelTwo = Ti.UI.createLabel
+({ 		
+		
+	 		textAlign:'center',
+	 		text: "Months",
+	 		color: "#FFFFFF",
+	 		font: {fontSize: 15, fontFamily: "Futura" },
+	 		zIndex: 1
+ 		
 });
 
 var TextTwo = Ti.UI.createLabel
 ({ 		
 		
 	 		textAlign:'center',
-	 		text: "Have you ever been denied credit: ",
+	 		text: "Loan Term: ",
 	 		color: "#037DCC",
 	 		font: {fontSize: 15, fontFamily: "Futura" },
 	 		top: "50%",
@@ -74,20 +112,39 @@ var FieldThree = Ti.UI.createTextField
 ({
 		   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 		   color: '#336699',
-		   width:100, 
-		   font:{fontSize:12,fontWeight:'bold'},
-		   hintText: 'Enter a #',
+		   width: 80, 
 		   height: 30,
 		   top: "59%",
-		   left: 200
+		   left: 115
 });
 
+var ViewThree = Ti.UI.createView
+({
+	
+			backgroundColor: "#037DCC",
+			width:40,
+			height: 30,
+			top: "59%",
+			left: 190
+	
+});
+
+var LabelThree = Ti.UI.createLabel
+({ 		
+		
+	 		textAlign:'center',
+	 		text: "%",
+	 		color: "#FFFFFF",
+	 		font: {fontSize: 15, fontFamily: "Futura" },
+	 		zIndex: 1
+ 		
+});
 
 var TextThree = Ti.UI.createLabel
 ({ 		
 		
 	 		textAlign:'center',
-	 		text: "How many loans do you have: ",
+	 		text: "Interest Rate: ",
 	 		color: "#037DCC",
 	 		font: {fontSize: 15, fontFamily: "Futura" },
 	 		top: "60%",
@@ -111,14 +168,36 @@ var FieldFour = Ti.UI.createTextField
 		   height: 30,
 		   top: "69%",
 		   enabled : false,
-		   left: 200
+		   left: 150
+});
+
+var ViewFour = Ti.UI.createView
+({
+	
+			backgroundColor: "#037DCC",
+			width:40,
+			height: 30,
+			top: "69%",
+			left: 115
+	
+});
+
+var LabelFour = Ti.UI.createLabel
+({ 		
+		
+	 		textAlign:'center',
+	 		text: "$",
+	 		color: "#FFFFFF",
+	 		font: {fontSize: 15, fontFamily: "Futura" },
+	 		zIndex: 1
+ 		
 });
 
 var TextFour = Ti.UI.createLabel
 ({ 		
 		
 	 		textAlign:'center',
-	 		text: "Your Credit is: ",
+	 		text: "Monthly Payments: ",
 	 		color: "#037DCC",
 	 		font: {fontSize: 15, fontFamily: "Futura" },
 	 		top: "70%",
@@ -139,7 +218,6 @@ var CButton = Ti.UI.createButton
  		textAlign:'center',
  		title: "Calculate",
  		top: "80%",
- 		left: 200,
  		color: "#037DCC",
  		font: {fontSize: 30, fontFamily: "Futura" },
  		zIndex: 1
@@ -177,112 +255,41 @@ var LineL = Ti.UI.createView
 
 
 
-
+ViewOne.add(LabelOne);
+ViewTwo.add(LabelTwo);
+ViewThree.add(LabelThree);
+ViewFour.add(LabelFour);
 
 BButton.addEventListener('click', function()
 {
-	alertWindow.show();
-    
+	
+    CurrentWindow.close();
+    	
 });
+
 
  CButton.addEventListener('click', function (e)
 {
    var ResultT = 1;
 	
-   var value  = FieldOne.value;
-   var value2 = FieldTwo.value;
-   var value3 = FieldThree.value;
+   var value  = FieldThree.value / 100;
    
+   var value2 = parseInt(FieldTwo.value);
    
-   if(value === "No" || value === "no")
-   {
-   		ResultT = ResultT + 1;
-   }
-   if(value === "Yes" || value === "yes")
-   {
-   		ResultT = ResultT + 0;
-   }
+   var value3 = parseInt(FieldOne.value);   
    
+   var value4 = parseInt(FieldOne.value * value);
    
+   var value5 = value3 + value4;
    
-    if(value2 === "No" || value2 === "no")
-   {
-   		ResultT = ResultT + 1;
-   }   
-   if(value2 === "Yes" || value2 === "yes")
-   {
-   		ResultT = ResultT + 0;
-   }
+   ResultT = value5 / value2;
    
-   
-   
-   
-    if(value3 < 2)
-   {
-   		ResultT = ResultT + 1;
-   }   
-
-    if(value3 > 2)
-   {
-   		ResultT = ResultT + 0;
-   		
-   }   
-   
-   ///////////////////////////////////////
-   
-   if(ResultT === 3)
-   {
-   		FieldFour.value = "Great";
-   		
-   }   
-   if(ResultT === 2)
-   {
-   		FieldFour.value = "Ok";
-   		
-   }   
-   if(ResultT === 1)
-   {
-   		FieldFour.value = "Bad";
-   		
-   }    
-   
- 
+   FieldFour.value = ResultT;
    
 });
 
 
-var alertWindow = Titanium.UI.createAlertDialog({
-    title: 'Close',
-    message: 'Are you sure',
-    cancel:1,
-    buttonNames: ['OK','Cancel']
-});
- 
-alertWindow.addEventListener('click',function(ev){
-    Titanium.API.info( "cancel " + ev.cancel );
-    Titanium.API.info( "index " + ev.index );
-    Titanium.API.info( "index " + ev.source );
-    switch(ev.index)
-    {
-    case 0:
-      Titanium.API.info( "OK button was hit");
-      CurrentWindow.close();    	
-      break;
-    case 1:
-      Titanium.API.info( "cancel button was hit");
-      break;
-    }
-});
 
-
-
-var ImageC = Ti.UI.createImageView
-	({
-			image: 	"Stuff/CS.jpg",
-			height: "35%",
-			width: "100%",	
-			top: 20,
-	});
 
 
 
@@ -290,5 +297,6 @@ CurrentWindow.add
 (
 	TextOne, TextTwo, TextThree, TextFour,
 	FieldOne, FieldTwo, FieldThree, FieldFour,
-	LineL, CButton, BButton,ImageC
+	LineL, CButton, BButton,
+	ViewOne , ViewTwo, ViewThree, ViewFour
 );

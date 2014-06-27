@@ -181,8 +181,9 @@ var LineL = Ti.UI.createView
 
 BButton.addEventListener('click', function()
 {
-	alertWindow.show();
-    
+	
+    CurrentWindow.close();
+    	
 });
 
  CButton.addEventListener('click', function (e)
@@ -252,8 +253,8 @@ BButton.addEventListener('click', function()
 
 
 var alertWindow = Titanium.UI.createAlertDialog({
-    title: 'Close',
-    message: 'Are you sure',
+    title: 'Titanium',
+    message: 'Simple Alert Message',
     cancel:1,
     buttonNames: ['OK','Cancel']
 });
@@ -266,7 +267,6 @@ alertWindow.addEventListener('click',function(ev){
     {
     case 0:
       Titanium.API.info( "OK button was hit");
-      CurrentWindow.close();    	
       break;
     case 1:
       Titanium.API.info( "cancel button was hit");
@@ -274,7 +274,7 @@ alertWindow.addEventListener('click',function(ev){
     }
 });
 
-
+alertWindow.show();
 
 var ImageC = Ti.UI.createImageView
 	({

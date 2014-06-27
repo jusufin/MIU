@@ -252,7 +252,7 @@ BButton.addEventListener('click', function()
 
 
 var alertWindow = Titanium.UI.createAlertDialog({
-    title: 'Close',
+    title: 'Titanium',
     message: 'Are you sure',
     cancel:1,
     buttonNames: ['OK','Cancel']
