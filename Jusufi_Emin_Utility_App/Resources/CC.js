@@ -186,7 +186,7 @@ var LabelFour = Ti.UI.createLabel
 ({ 		
 		
 	 		textAlign:'center',
-	 		text: "%",
+	 		text: "$",
 	 		color: "#FFFFFF",
 	 		font: {fontSize: 15, fontFamily: "Futura" },
 	 		zIndex: 1
@@ -266,6 +266,30 @@ BButton.addEventListener('click', function()
     CurrentWindow.close();
     	
 });
+
+
+ CButton.addEventListener('click', function (e)
+{
+   var ResultT = 1;
+	
+   var value  = FieldThree.value / 100;
+   
+   var value2 = parseInt(FieldTwo.value);
+   
+   var value3 = parseInt(FieldOne.value);   
+   
+   var value4 = parseInt(FieldOne.value * value);
+   
+   var value5 = value3 + value4;
+   
+   ResultT = value5 / value2;
+   
+   FieldFour.value = ResultT;
+   
+});
+
+
+
 
 
 
