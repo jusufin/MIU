@@ -1,0 +1,153 @@
+//Emin Jusufi
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var mainWin = Ti.UI.createWindow
+({	
+	
+	title: "",
+	backgroundColor: "#fff"
+	
+}); 
+
+
+var navWindow = Ti.UI.iOS.createNavigationWindow
+({
+	
+	window: mainWin
+	
+});
+
+
+var BackgroundView = Ti.UI.createView
+({
+	
+	backgroundColor: "#474145",
+	width:"100%",
+	height: "100%"
+	
+});
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+var FirstButtonLabel = Ti.UI.createLabel
+({		
+	
+ 		textAlign:'center',
+ 		bottom: 20,
+ 		text: "About Us",
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
+ 		
+});
+
+
+var SecondButtonLabel = Ti.UI.createLabel
+({		
+	
+ 		textAlign:'center',
+ 		text: "Our Pets",
+ 		bottom: 40,
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
+ 		
+});
+
+
+var ThirdButtonLabel = Ti.UI.createLabel
+({ 		
+		
+ 		textAlign:'center',
+ 		text: "Care Information",
+ 		bottom: 60,
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 30, fontFamily: "Futura" },
+ 		zIndex: 1
+ 		
+});
+
+var TopLabel = Ti.UI.createLabel
+({ 		
+		
+ 		textAlign:'center',
+ 		text: "Utility App",
+ 		color: "#FFFFFF",
+ 		font: {fontSize: 50, fontFamily: "Futura" },
+ 		Top: 80,
+ 		zIndex: 1
+ 		
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var AboutMove = function()
+{
+	
+	var Win = Ti.UI.createWindow
+	({
+		title: "Gallery",
+		backgroundColor: "#474145",
+		url: "About.js"
+	});		
+	
+	navWindow.add(Win);
+	navWindow.openWindow(Win);
+	
+};
+
+var PetMove = function()
+{
+	
+	
+	var Win2 = Ti.UI.createWindow
+	({
+		title: "Pets",
+		backgroundColor: "#474145",
+		url: "Pets.js",
+		WindowN: navWindow
+	});		
+	
+	navWindow.add(Win2);
+	navWindow.openWindow(Win2);
+	
+};
+
+var InfoMove = function()
+{
+	
+	var Win3 = Ti.UI.createWindow
+	({
+		title: "Care Information",
+		backgroundColor: "#474145",
+		url: "InfoP.js",
+		WindowN: navWindow
+	});		
+	
+	navWindow.add(Win3);
+	navWindow.openWindow(Win3);
+	
+};
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ThirdButtonLabel.addEventListener("click", InfoMove);
+SecondButtonLabel.addEventListener("click", PetMove);
+FirstButtonLabel.addEventListener("click", AboutMove);
+
+mainWin.add(BackgroundView,FirstButtonLabel,SecondButtonLabel,ThirdButtonLabel,TopLabel);
+navWindow.open();
